@@ -1,0 +1,41 @@
+{% extends 'base1.html' %}
+
+{% block title %}Blog &middot; {{ block.super }}{% endblock %}
+
+{% block content-wrapper %}
+  <div class="row">
+    <div class="col-md-9">
+      <div class="blog">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+
+<div class="col-md-3 col-sm-5">
+      {% block sidebar-right %}
+       <div class="sidebar-item categories">
+          <h3>Browse</h3>
+
+          <ul class="nav navbar-stacked">
+            <li><a href="{% url 'blog:post-archive' %}">Archive</a></li>
+            <li><a href="{% url 'blog:post-archive' %}">2017</a></li>
+            <li><a href="{% url 'blog:post-archive' %}">2018</a></li>
+            <li><a href="{% url 'blog:post-archive' %}">2019</a></li>
+          <ul>
+        </div>
+
+        {% if post_tags %}
+<div class="sidebar-item tag-cloud">
+            <h3>Tags</h3>
+
+            <ul class="nav nav-pills">
+              {% for post_tag in post_tags %}
+                <li><a href="{% url 'blog:post-list-by-tag' post_tag.slug %}">{{ post_tag.name }}</a></li>
+              {% endfor %}
+            <ul>
+          </div>
+        {% endif %}
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
+                
