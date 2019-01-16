@@ -1,29 +1,40 @@
  {% extends "base1.html" %}
+ {% load static %} 
 
-{% block title %}About Us &middot; {{ block.super }}{% endblock %}
+{% block title %}Logo Design &middot; {{ block.super }}{% endblock %}
 
 {% block breadcrumb-wrapper %}{% endblock %}
  
 {% block content %}
-  <div class="contact">
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun" align="left">
-             <div class="container" align="left">
-                <div class="row" align="left">
-                    <div class="action" align="left">
-                        <div class="col-sm-12" align="left">
-                            <div id="feature-container" align="left">
-                <div class="row" align="left">
-                    <div class="col-md-12" align="left">
-                        <h2 class="page-header">ALogo Designing</h2>
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Logo Designing</h1>
+                            <p>Because right Logo can make big differences</p>
+                        </div>                                                                                
                     </div>
-                    <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" align="left">
-                        <div class="feature-inner">
-                            <div class="icon-wrapper" align="left">
-                                <i class="fa fa-2x fa-envelope-o"></i>
-                            </div>
-                            <h2>Logos</h2>
-                            <p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/5.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold">
+                                    <p><br>
 Logo, the visual identity of an organization - can tell the story of an organization's story to its Audience.
 <br>
 In every Article or Magazine, you read you will feel the importance of LOGO, that means it is true that it is the face of a company. The logo of any company is symbolic depiction and also tells about company core values and beliefs on which it was founded.<br>
@@ -51,16 +62,28 @@ Testimonials:
 3. The logo designed by AdBazzar for my organization is good. The team is awesome.<br>
 BYE<br><br>
 </p>
+                                </h2>
+                                </div>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/1.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>                        
-                </div>
-            </div><!--/#feature-container-->
-                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-  </div>
+
+
+
+
+
+
+
 {% endblock %}

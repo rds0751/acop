@@ -1,29 +1,40 @@
- {% extends "base1.html" %}
+{% extends "base1.html" %}
+{% load static %} 
 
-{% block title %}About Us &middot; {{ block.super }}{% endblock %}
+{% block title %}Video & Content Development &middot; {{ block.super }}{% endblock %}
 
 {% block breadcrumb-wrapper %}{% endblock %}
  
 {% block content %}
-  <div class="contact">
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun" align="left">
-             <div class="container" align="left">
-                <div class="row" align="left">
-                    <div class="action" align="left">
-                        <div class="col-sm-12" align="left">
-                            <div id="feature-container" align="left">
-                <div class="row" align="left">
-                    <div class="col-md-12" align="left">
-                        <h2 class="page-header">Video Content</h2>
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Motion Graphics</h1>
+                            <p>Because People love moving objects</p>
+                        </div>                                                                                
                     </div>
-                    <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" align="left">
-                        <div class="feature-inner">
-                            <div class="icon-wrapper" align="left">
-                                <i class="fa fa-2x fa-envelope-o"></i>
-                            </div>
-                            <h2>Engage Customers like never before through our Professional  Video Editing Services.</h2>
-                            <p>Engage Customers like never before through our Professional  Video Editing Services.<br><br><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/2.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold">
+                                    <p>Engage Customers like never before through our Professional  Video Editing Services.<br><br><br>
 
 Video generates more lead as compared to Picture and written posts. The simplest yet best funda of video marketing is "The more charming videos you create, the more clients you get." <br>
 Video helps in explaining the company products, goals and ambition in a few minutes. It helps in generating revenues. <br><br><br>
@@ -88,16 +99,29 @@ Apart from creating high-quality videos, we have a specialized team of search en
 
 
 </p>
+                                </h2>
+                                </div>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/3.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>                        
-                </div>
-            </div><!--/#feature-container-->
-                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-  </div>
+
+
+
+
+
+
+
+
 {% endblock %}

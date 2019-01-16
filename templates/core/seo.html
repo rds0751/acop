@@ -1,28 +1,40 @@
  {% extends "base1.html" %}
+ {% load static %} 
 
-{% block title %}About Us &middot; {{ block.super }}{% endblock %}
+{% block title %}SEO &middot; {{ block.super }}{% endblock %}
 
 {% block breadcrumb-wrapper %}{% endblock %}
  
 {% block content %}
-  <div class="contact">
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun" align="left">
-             <div class="container" align="left">
-                <div class="row" align="left">
-                    <div class="action" align="left">
-                        <div class="col-sm-12" align="left">
-                            <div id="feature-container" align="left">
-                <div class="row" align="left">
-                    <div class="col-md-12" align="left">
-                        <h2 class="page-header">
-WHY SEO SERVICE REQUIRED FOR ONLINE PRESENCE?</h2>
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">WHY SEO SERVICE REQUIRED FOR ONLINE PRESENCE?</h1>
+                            <p>Because search engine is new universal helpline</p>
+                        </div>                                                                                
                     </div>
-                    <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" align="left">
-                        <div class="feature-inner">
-                            <h2>
-WHY SEO SERVICE REQUIRED FOR ONLINE PRESENCE?</h2>
-                            <p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/4.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold">
+                                    <p><br>
 
 SEO nowadays is in high demand as it is a need of the hour. These are the services given by expert service provider in which practices of Search Engine Optimization are being used in order to increase the number of visitors on the website by having the higher rank on search engine. If anyone wants their website to come on the top of the search engine then they have to optimize it as per google algorithm.<br><br>
 Now the question arises that why we need Optimization Service so the answer is whenever anyone have any kind of doubt they just go on search engines and just write a keyword to know the best-associated answer with it and as soon as we enter, the list comes in front of our eyes and have we ever bothered how this listing or how this priority has been done on the search engine. So if we want our website to come on the top of the list, then there comes the use of search engine optimization.<br><br><br>
@@ -60,16 +72,26 @@ WHAT WE OFFER IN LOCAL SEO?<br>
     • Claiming your Google My Business listing<br>
     • We will Manage reviews and ratings of Your Google business page<br>
     • Help Your website in getting quality, relevant backlinks</p>
+                                </h2>
+                                </div>
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/1.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>                        
-                </div>
-            </div><!--/#feature-container-->
-                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-  </div>
+
+
+
+
+
 {% endblock %}

@@ -1,29 +1,41 @@
  {% extends "base1.html" %}
+ {% load static %} 
 
-{% block title %}About Us &middot; {{ block.super }}{% endblock %}
+{% block title %}Clients &middot; {{ block.super }}{% endblock %}
 
 {% block breadcrumb-wrapper %}{% endblock %}
  
 {% block content %}
-  <div class="contact">
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun" align="left">
-             <div class="container" align="left">
-                <div class="row" align="left">
-                    <div class="action" align="left">
-                        <div class="col-sm-12" align="left">
-                            <div id="feature-container" align="left">
-                <div class="row" align="left">
-                    <div class="col-md-12" align="left">
-                        <h2 class="page-header">About</h2>
+
+<section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Clients</h1>
+                            <p>Because We have created Relations already</p>
+                        </div>                                                                                
                     </div>
-                    <div class="col-sm-12 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms" align="left">
-                        <div class="feature-inner">
-                            <div class="icon-wrapper" align="left">
-                                <i class="fa fa-2x fa-envelope-o"></i>
-                            </div>
-                            <h2>About Us</h2>
-                            <p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="post-thumb">
+                                    <a href="#"><img src="{% static 'images/blog/7.jpg' %}" class="img-responsive" alt=" ahdgd"></a>
+                                </div>
+                                <div class="post-content overflow">
+                                    <h2 class="post-title bold">
+                                    <p><br>
 Started in the year 2018, ADBAZZAR has taken the first into the world of becoming the leading marketing communication agency where businesses will find their way to brand recognition. With the idea of being among the leading competitors in the marketplace, we have associated with the most exemplary dedicated professionals who intend to provide result-oriented ideas without any loopholes.<br><br>
 
 We have ventured into the journey of transforming a business into a successful brand name with the implementation of the most innovative ideas to garner the trust and the loyal of the consumers. We intend in providing the best solution to our consumers that they have been looking forward to curating your needs and requirements. We aspire to take your business to a new pinnacle with your ideas and our innovation.<br><br>
@@ -42,16 +54,60 @@ Proven Results!<br>
 We won’t say that we have years of experience but yes, every project that we have taken we have proved us right!
 As it is said, “Growth is never by mere chance; it is the result of forces working together.”
 And we believe in hard work.</p>
+                                </h2>
+                                </div>
+                                <section id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <p><img src="{% static 'images/home/clients.png' %}" class="img-responsive" alt=""></p>
+                        <h1 class="title">Happy Clients</h1>
+                        <p><br></p>
+                    </div>
+                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/clients/1.jpg' %}" class="img-responsive" alt=""></a>
                         </div>
-                    </div>                        
-                </div>
-            </div><!--/#feature-container-->
+                        <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/clients/2.jpg' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/Clients/3.jpg' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/clients/4.jpg' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/clients/5.jpg' %}" class="img-responsive" alt=""></a>
+                        </div>
+                         <div class="col-xs-3 col-sm-2">
+                            <a href="#"><img src="{% static 'images/clients/6.jpg' %}" class="img-responsive" alt=""></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+     </section>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    <div class="sidebar blog-sidebar">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    
-  </div>
+
+
+
+
+
+
+
+
+
 {% endblock %}
