@@ -18,6 +18,9 @@ def seo(request):
 def smo(request):
     return render(request, 'core/smo.html')
 
+def tour(request):
+    return render(request, 'core/index.html')
+
 def ppc(request):
     return render(request, 'core/ppc.html')
 
