@@ -1,16 +1,31 @@
 {% extends "base1.html" %}
 
-{% block title %}{{ flatpage.title }} &middot; {{ block.super }}{% endblock %}
+{% block title %}{{ flatpage.title }}{% endblock %}
 
-{% block breadcrumbs %}
-  {{ block.super }}
-  <li class="active">{{ flatpage.title }}</li>
-{% endblock %}
 
 {% block content %}
-  <div class="flatpages">
-    <h1>{{ flatpage.title }}</h1>
 
-    {{ flatpage.content }}
-  </div>
+<!--Page heading Start Here--> 
+                      <section class="page_heading">
+                          <div class="overly_bg">
+                              <div class="container">
+                                  <div class="row">
+                                       <h2 class="heading_title">{{ flatpage.title }}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                      <!--Page heading End Here-->
+                      <section class="about_wrapper">
+                    <div class="container">
+                      <div class="row">
+                          <div class="col-md-12 col-sm-12">
+                                  {{ flatpage.content }}
+                              </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                  </section>
+
 {% endblock %}
