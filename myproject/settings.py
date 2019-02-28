@@ -165,9 +165,9 @@ if DEBUG:
 
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+    'default': dj_database_url.config(
+        default='postgres://cnagzxmvjuufvj:004dfdbb06bf90eea5f57eec45bc8487cd761c840c42e126575d8a8edeab537c@ec2-54-225-89-195.compute-1.amazonaws.com:5432/d31fdf2qipu4cr',
+        conn_max_age=600)}
