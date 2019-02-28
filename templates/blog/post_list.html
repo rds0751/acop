@@ -3,70 +3,66 @@
 
 {% block breadcrumbs %}
   {{ block.super }}
-    <section id="page-breadcrumb">
-        <div class="vertical-center sun">
-             <div class="container">
-                <div class="row">
-                    <div class="action">
-                        <div class="col-sm-12">
-                            <h1 class="title">Blog</h1>
-                            <p>Timeline</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--Page heading Start Here--> 
+    <header>
+                        <section class="page_heading">
+                            <div class="overly_bg">
+                                <div class="container">
+                                    <div class="row">
+                                         <h2 class="heading_title">News & Media</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                      <!--Page heading End Here-->
+                    
+                </header>
     <!--/#page-breadcrumb-->
 {% endblock %}
 
 {% block content %}
 
- <section id="blog" class="padding-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-5">
-                </div>
-                {% for post in posts %}
-                <div class="col-md-6 col-sm-7">
+<!-- Middle Wrapper Start Here-->
+                  
+                 <section class="blog_wrapper">
+                
+                <div class="container">
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="single-blog two-column">
-                                <div class="post-thumb">
-                                    <a href="blogdetails.html"><img src="images/blog/9.jpg" class="img-responsive" alt=""></a>
-                                    <div class="post-overlay">
-                                        <span class="uppercase"><a href="#">{{ post.published_date|date:"F j, Y" }}</a></span>
-                                    </div>
-                                </div>
-                                <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="{% url 'blog:post-detail' slug=post.slug %}">{{ post.title }}</a></h2>
-                                    <p>{{ post.snippet|safe }}</p>
-                                    <a href="{% url 'blog:post-detail' slug=post.slug %}">Read more &rarr;</a>
-                                    <div class="post-bottom overflow">
-                                        <ul class="nav navbar-nav post-nav">
-                                            <li><a href="#"></a></li>
-                                            <li><a href="#"></a></li>
-                                            <li><a href="#"></a></li>
+                        <div class="col-md-8 col-sm-8">
+                            {% for post in posts %}
+                            <div class="post_block">
+                                <div class="col-md-12">
+                                <img src="assets/img/post_img.jpg" alt="">
+                                <h2 class="post-title bold"><a href="{% url 'blog:post-detail' slug=post.slug %}">{{ post.title }}</a></h2>
+                                
+                                <p>{{ post.snippet|safe }}</p>
+                                 <div class="catageory">
+                                        <ul>
+                                            <li ><a href="#">{{ post.published_date|date:"F j, Y" }}</a></li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {% empty %}
+                                        <div class="clearfix"></div>
+                                     </div>
+                                
+                                <a href="single-post.html" class="read_more">Read More</a>
+                                {% empty %}
     <h1>Blog</h1>
                       {% endfor %}
     <p>No More posts yet.</p>
 
-                    {% include 'core/includes/_pagination.html' with url_name='blog:post-list' %}
-                 </div>
-            </div>
-        </div>
-    </section>
+                    {% include 'core/includes/_pagination.html' with url_name='blog:post-list' %}  
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>  
+                        </div>  
+                        
+                       </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </section>
+                 
     {% endblock content %}
 
-    <!--/#blog-->
+            <!-- Middle Wrapper End Here-->
 
 
 

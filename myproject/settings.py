@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'core',
     'contact',
     'blog',
+    "flatpage_meta",
 ]
 
 MIDDLEWARE = [
@@ -74,7 +75,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
                 'blog.context_processors.post_tags',
             ],
         },
@@ -169,5 +169,5 @@ import dj_database_url
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgres://cnagzxmvjuufvj:004dfdbb06bf90eea5f57eec45bc8487cd761c840c42e126575d8a8edeab537c@ec2-54-225-89-195.compute-1.amazonaws.com:5432/d31fdf2qipu4cr',
+        default='postgres://jsuvemhgmepixk:7772dcf9e9c79bbede0d3ae55b9dce04f811e73c7932f6961361a3caffd3f5f5@ec2-54-225-89-195.compute-1.amazonaws.com:5432/dfvh91fatt7dku',
         conn_max_age=600)}

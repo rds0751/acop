@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
     url(r'^contact/', include('contact.urls', namespace='contact')),
-    url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^media-aryans-pharmacy/', include('blog.urls', namespace='blog')),
     url(r'', include('core.urls', namespace='core')),
 ]
 
