@@ -16,3 +16,4 @@ sqlparse==0.2.3           # via django-debug-toolbar
 gunicorn
 dj-static==0.0.6
 dj-database-url
+psycopg2
