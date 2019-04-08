@@ -1,8 +1,7 @@
 {% extends "base1.html" %}
-
+{% load flatpage_meta_tags %}{% flatpage_meta_tags flatpage %}
 {% block title %}{{ flatpage.title }}{% endblock %}
-{% load flatpage_meta_tags %}
-{% flatpage_meta_tags %}
+
 
 
 {% block content %}
