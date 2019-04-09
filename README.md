@@ -1,4 +1,4 @@
-# Django Blog Sample
+# Django Aryans Website
 
 This repository contains a simple web application built with the Django web framework.
 
@@ -38,4 +38,30 @@ python manage.py runserver
 ```
 
 And, enjoy it! :tada:
-"# adbazza" 
+"Aryans Group of Colleges" 
+
+Instructions For Aryans Team 
+Directly Make Changes to '''templates, and static folder''' changes will be deployed automatically.
+
+
+Urgent Changes Done:
+
+1. Slide Pics not showing properly
+
+2. Compress the size of Header, Lot of Space is there 
+
+3. Make the Menu Bar's name Bold
+
+4. Add Menu "Management" (Sub menu)
+   Anti Ragging Committee
+   Grievance Redressal Cell
+   Sexual Harassment Committe
+   SC/ST Committee
+
+5. Admission Query Box on Home Page
+
+6. Contact Form
+
+7. Feedback Form
+
+8. Pop up Admission Form
