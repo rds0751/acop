@@ -28,7 +28,7 @@ class ContactForm(forms.Form):
 
     def clean_subject(self):
         subject = ''.join(self.cleaned_data['subject'].splitlines())
-        return '[Contact form] ' + subject
+        return subject
 
     def send_email(self):
         email = EmailMessage(

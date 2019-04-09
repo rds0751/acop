@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.contrib import messages
 
 from .forms import ContactForm
+from .models import Contact
 
 
 class ContactView(FormView):
@@ -12,7 +13,7 @@ class ContactView(FormView):
     template_name = 'contact/contact.html'
 
     def get_success_url(self):
-        return reverse('core')
+        return reverse('contact:contact')
 
     def form_valid(self, form):
         model = Contact()

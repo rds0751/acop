@@ -245,288 +245,113 @@
                         </div> 
                 	 </section>
             	   <!--Our Partner wrapper End Here-->
-                 <script type="text/javascript">// PopUp Form and thank you popup after sending message
-var $popOverlay = $(".popup-overlay");
-var $popWindow = $(".popWindow");
-var $subscribeWindow = $(".subscribe_window");
-var $popThankYouWindow = $(".thank_you_window");
-var $popClose = $(".close-btn");
- 
-$(function() {
-  // Close Pop-Up after clicking on the button "Close"
-  $popClose.on("click", function() {
-    $popOverlay.fadeOut();
-    $popWindow.fadeOut();
+                 <script type="text/javascript">
+  $(document).ready(function(){
+    $("#myModal").modal('show');
   });
- 
-  // Close Pop-Up after clicking on the Overlay
-  $(document).on("click", function(event) {
-    if ($(event.target).closest($popWindow).length) return;
-    $popOverlay.fadeOut();
-    $popWindow.fadeOut();
-    event.stopPropagation();
-  });
- 
-  // Form Subscribe
-  $(".subscribe-form").submit(function() {
-    var th = $(this);
-    $.ajax({
-      type: "POST",
-      url: "mail.php",
-      data: th.serialize()
-    }).done(function() {
-      // после успешной отправки скрываем форму подписки и выводим окно с благодарностью за заполнение формы
-      $subscribeWindow.fadeOut();
-      $popThankYouWindow.fadeIn();
-      // используем куки на 30 дней, если человек заполнил форму
-      // для куки обязательно должен быть подключен jquery.cookie.min.js
-      //$.cookie('hideTheModal', 'true', { expires: 30 });
-      // очищаем форму
-      setTimeout(function() {
-        th.trigger("reset");
-      }, 1000);
-    });
-    return false;
-  });
-});
-
-// используйте этот код, если нужно появление формы без куки
-$(window).load(function() {
-  setTimeout(function() {
-    $popOverlay.fadeIn();
-    $subscribeWindow.fadeIn();
-  }, 2000);
-});</script>
-<style type="text/css">
-  /* Стили для затемнения фона */
-.popup-overlay {
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 186, 0, 0.7);
-  z-index: 100;
-}
- 
-/* Основные стили для всплывающего окна */
-.popWindow{
-  display: none;
-  background-color: #161613;
-  color: #fff;
-  width: 90%;
-  max-width: 720px;
-  padding: 40px 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -360px;
-  margin-top: -185px;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(18, 17, 12, 0.5);
-}
-/* Стили для адаптивности всплывающего окна */
-@media only screen and (max-width : 800px) {
-  .popWindow {
-    margin-left: -45%;
-  }
-}
-/* Кнопка закрыть всплывающее окно */
-.close-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 40px;
-  line-height: 20px;
-  cursor: pointer;
-  color: #999;
-  padding: 10px;
-}
-/* Просто текст */
-.subscribe_window .subcsribe-text {
-  font-size: 18px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  margin: 0 0 40px;
-  position: relative;
-  padding: 0 50px;
-  z-index: 10;
-}
-/* Текст */
-.subscribe_window .req-fields {
-  color: #676767;
-  text-align: left;
-}
-/* Стили формы */
-.subscribe-form {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-.subscribe-form div {
-  position: relative;
-}
-.subscribe-form input {
-  border: 1px solid #3d3d3d;
-  width: 100%;
-  font-family: "Lato", sans-serif;
-  font-size: 16px;
-  line-height: 32px;
-  padding: 5px 20px;
-  margin-bottom: 20px;
-  outline: none;
-  background: #2e2e2b;
-  color: #fff;
-  border-radius: 4px;
-}
-.btn {
-  color: #161613;
-  background-color: #ffba00;
-  padding: 10px 50px;
-  text-align: center;
-  font-size: 13px;
-  border: 1px solid #ffba00;
-  box-shadow: none;
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-.btn:hover, .btn:focus {
-  background-color: #ffba00;
-  color: #fff;
-  text-decoration: none;
-}
-.subscribe-form .btn {
-  font-size: 24px;
-  line-height: 54px;
-  border: none;
-  width: 100%;
-  padding: 10px;
-  font-weight: 700;
-  text-align: center;
-  outline: none;
-  border-radius: 4px;
-}
-.subscribe-form .btn:hover {
-  background-color: #e6a700;
-}
-.subscribe-form .btn i {
-  font-size: 28px;
-  margin-right: 7px;
-}
-.subscribe-form label {
-  color: #fff;
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  -webkit-transition: 0.28s;
-  transition: 0.28s;
-}
-.subscribe-form label span {
-  color: #ffba00;
-}
-.subscribe-form input:focus + label {
-  left: -62px;
-  font-size: 12px;
-}
-.subscribe-form input:invalid {
-  box-shadow: none;
-}
-.subscribe-form input:valid {
-  border: 1px solid #161613;
-}
-.subscribe-form input:valid + label {
-  left: -62px;
-  font-size: 12px;
-}
-.subscribe-form input:invalid:not(:focus):not(:placeholder-shown) {
-  border: 1px solid #d3362a;
-}
-.subscribe-form input:invalid:not(:focus):not(:placeholder-shown) + label {
-  left: -62px;
-  font-size: 12px;
-}
-@media only screen and (max-width : 480px) {
-  .subscribe_window{
-    top: 5%;
-    margin-top: 0;
-  }
-  .subscribe_window .subcsribe-text{
-    padding: 0;
-  }
-  .subscribe-form input:focus + label{
-    left: 20px;
-    top: -18px;
-  }
-  .subscribe-form input:valid + label{
-    left: 20px;
-    top: -18px;
-  }
-  .subscribe-form input:invalid:not(:focus):not(:placeholder-shown) + label{
-    left: 20px;
-    top: -18px;
-  }
-}
- 
-/* Стили для текста внутри благодарственного окна после успешной отправки */
-.thank_you_window .thank_you_title {
-  font-family: "Titillium Web", sans-serif;
-  color: #fff;
-  font-size: 32px;
-  line-height: 50px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.thank_you_window .thank_you_body {
-  font-family: "Titillium Web", sans-serif;
-  color: #fff;
-  font-size: 24px;
-  font-weight: 400;
-}
-</style>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h1>Admission Form</h1>
- 
-      <div class="popup-overlay"><!-- //оверлей - отображение формы на затемненном фоне -->
- 
-        <div class="popWindow subscribe_window"><!-- //основное окно формы Подписки -->
-          <p class="subcsribe-text">Get Admission in one of the best pharmacy institute in north india.</p>
-          <form action="/action_page.php" class="form-container">
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required>
-
-    <label for="psw"><b>Phone</b></label>
-    <input type="phone" placeholder="Enter Phone" name="psw" required>
-
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="loc"><b>Location</b></label>
-    <input type="text" placeholder="Enter Location" name="loc" required>
-
-    <button type="submit" class="btn">Submit</button>
+</script>
+<div id="myModal" class="modal fade">
+<section class="content-wrapper">
+                         <div class="container">
+                            <div class="row" align="center">
+                            <div class="col-md-12 col-sm-12">
+                                 <h2>Make your career in pharmacy with Aryans Pharmacy College!</h2>
+                                 <p>Get Admission in one of the best pharmacy institute in north india.</p>
+            
+                <form action="/" class="form-container">
+                  <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                      <input placeholder="Enter Name" id="name_6" name="name" required="" class="form-control" aria-required="true" type="text">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group mb-20">
+                      <input placeholder="Email" id="email_6" name="email" class="form-control" required="" aria-required="true" type="text">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group mb-20">
+                      <input placeholder="Phone" id="phone_number_6" name="phone_number" class="form-control" required="" aria-required="true" type="text">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                      <div class="styled-select">
+                        <select id="state_select_6" name="state" class="form-control" required="">
+                          <option value="">Choose State</option>
+                          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                          <option value="Andhra Pradesh">Andhra Pradesh</option>
+                          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                          <option value="Assam">Assam</option>
+                          <option value="Bihar">Bihar</option>
+                          <option value="Chandigarh">Chandigarh</option>
+                          <option value="Chhattisgarh">Chhattisgarh</option>
+                          <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                          <option value="Daman and Diu">Daman and Diu</option>
+                          <option value="National Capital Territory of Delhi">National Capital Territory of Delhi</option>
+                          <option value="Goa">Goa</option>
+                          <option value="Gujarat">Gujarat</option>
+                          <option value="Haryana">Haryana</option>
+                          <option value="Himachal Pradesh">Himachal Pradesh</option>
+                          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                          <option value="Jharkhand">Jharkhand</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Kerala">Kerala</option>
+                          <option value="Lakshadweep">Lakshadweep</option>
+                          <option value="Madhya Pradesh">Madhya Pradesh</option>
+                          <option value="Maharashtra">Maharashtra</option>
+                          <option value="Manipur">Manipur</option>
+                          <option value="Meghalaya">Meghalaya</option>
+                          <option value="Mizoram">Mizoram</option>
+                          <option value="Nagaland">Nagaland</option>
+                          <option value="Odisha">Odisha</option>
+                          <option value="Puducherry">Puducherry</option>
+                          <option value="Punjab">Punjab</option>
+                          <option value="Rajasthan">Rajasthan</option>
+                          <option value="Sikkim">Sikkim</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Telangana">Telangana</option>
+                          <option value="Tripura">Tripura</option>
+                          <option value="Uttar Pradesh">Uttar Pradesh</option>
+                          <option value="Uttarakhand">Uttarakhand</option>
+                          <option value="West Bengal">West Bengal</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group mb-20">
+                      <div class="styled-select">
+                        <select id="course_select_6" name="course" class="form-control" required="">
+                          <option value="">Choose Course</option>
+                          <option value="B.Com-LL.B">B.Com-LL.B</option>
+                          <option value="BA-LL.B">BA-LL.B</option>
+                          <option value="LL.B">LL.B</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="col-sm-6">
+                    <div class="form-group mb-20">
+                      <input name="Date Of Birth" class="form-control required date-picker" placeholder="Date Of Birth" aria-required="true" type="text">
+                    </div>
+                  </div> -->
+                  
+                  <div class="col-sm-12">
+                    <div class="form-group mb-0 mt-10">
+                      <input name="form_botcheck" class="form-control" value="" type="hidden">
+                      <button  id='submit' type="submit" class="btn btn-success" data-loading-text="Please wait...">Submit Request</button>
+                    </div>
+                  </div>
+                </div>
   </form>
-          <div class="close-btn">&times;</div>
-        </div><!-- /subscribe_window -->
- 
-        <div class="popWindow thank_you_window"><!-- //благодарственное окно после успешной отправки формы -->
-          <p class="thank_you_title">Thank you for Interest will get back to you soon!</p>
-          <p class="thank_you_body">We've sent some useful tips to your email. Go ahead and check them now!</p>
-          <div class="close-btn">&times;</div>
-        </div><!-- /thank_you_window -->
- 
-      </div><!-- /popup-overlay -->
- 
+        </div>
     </div>
-  </div>
 </div>
+</section>
+</div>
+
       
                     
             <!-- Middle Wrapper End Here-->
