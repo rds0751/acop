@@ -12,9 +12,16 @@ class ContactView(FormView):
     template_name = 'contact/contact.html'
 
     def get_success_url(self):
-        return reverse('contact:contact')
+        return reverse('core')
 
     def form_valid(self, form):
+        model = Contact()
+
+        model.name = form.cleaned_data['name']
+        model.email = form.cleaned_data['email']
+        model.subject = form.cleaned_data['subject']
+        model.message = form.cleaned_data['message']
+        model.save()
         if form.send_email():
             messages.info(self.request, 'Thank you for your message. We will be in touch shortly.')
         else:
